@@ -29,7 +29,7 @@ const createFile = (student) => {
     console.error(err);
   }
 };
-createFile(student);
+// createFile(student);
 
 // ------------------------------------------------------
 // Read
@@ -134,8 +134,10 @@ const deleteStudent = async (id) => {
   let students = await readFile();
   if (checkID > -1) {
     students.splice(checkID, 1);
-    // console.log(students);
+    writeFile(students);
     console.log("Xóa thành công!");
+  } else {
+    console.log("ID không tồn tại!");
   }
 };
-// deleteStudent(1);
+deleteStudent(2);
